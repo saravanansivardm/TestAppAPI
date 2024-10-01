@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">TestAPIApp</string>
+    <string name="ip_txt">IP</string>
+    <string name="type_txt">Type</string>
+    <string name="cont_code_txt">Continent Code :</string>
+    <string name="cont_name_txt">Continent Name :</string>
+    <string name="country_code_txt">Country Code :</string>
+    <string name="country_name_txt">Country Name :</string>
+    <string name="region_code_txt">Region Code :</string>
+    <string name="region_name_txt">Region Name :</string>
+    <string name="city_txt">City : </string>
+    <string name="zip_txt">Zip :</string>
+    <string name="lat_txt">Latitude :</string>
+    <string name="long_txt">Longitude :</string>
+    <string name="msa_txt">Msa :</string>
+    <string name="dma_txt">Dma :</string>
+    <string name="radius_txt">Radius :</string>
+    <string name="ip_route_type_txt">IPRouting Type :</string>
+    <string name="connection_type_txt">Connection Type :</string>
+    <string name="geo_name_txt">Geo name id :</string>
+    <string name="capital_txt">Capital :</string>
+    <string name="flag_emoji_txt">Flag Emoji :</string>
+    <string name="emoji_unicode_txt">Emoji Unicode :</string>
+    <string name="calling_code_txt">Calling Code :</string>
+    <string name="is_eu_txt">Is EU :</string>
+    <string name="title_txt">Basic Standard IP Lookup Data</string>
+    <string name="check_network_txt">Please check your internet connectivity</string>
+
+    <string name="api_key_txt">46f4827b583a368f2a16cf913683cfef</string>
+    <string name="api_key_old_01_txt">e6b8442e21e63065ad1809dd8dbbbe74</string>
+    <string name="api_key_old_02_txt">6563876547d224c9b9a41179e52037bc</string>
+    <string name="api_key_old_03_txt">49a52fc3d45c228e903afa1e6a0f25fa</string>
+</resources>
