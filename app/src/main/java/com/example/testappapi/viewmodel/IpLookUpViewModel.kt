@@ -12,6 +12,7 @@ import com.example.testappapi.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -32,7 +33,7 @@ class IpLookUpViewModel @Inject constructor(
 
     fun fetchDataFromApi() {
         Dispatchers.IO
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             getIpLookUpData()
         }
     }
@@ -47,7 +48,9 @@ class IpLookUpViewModel @Inject constructor(
 
             is Resource.Success -> {
                 isLoading.value = true
-                _getIpData.value = result.data
+                withContext(Dispatchers.Main) {
+                    _getIpData.value = result.data
+                }
             }
 
             is Resource.Error -> {

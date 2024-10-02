@@ -26,7 +26,8 @@
     <string name="title_txt">Basic Standard IP Lookup Data</string>
     <string name="check_network_txt">Please check your internet connectivity</string>
 
-    <string name="api_key_txt">46f4827b583a368f2a16cf913683cfef</string>
+    <string name="api_key_txt">174ffb1199354c926cc2310dc664cf47</string>
+    <string name="api_key_old_04_txt">46f4827b583a368f2a16cf913683cfef</string>
     <string name="api_key_old_01_txt">e6b8442e21e63065ad1809dd8dbbbe74</string>
     <string name="api_key_old_02_txt">6563876547d224c9b9a41179e52037bc</string>
     <string name="api_key_old_03_txt">49a52fc3d45c228e903afa1e6a0f25fa</string>
