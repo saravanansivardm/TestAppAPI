@@ -14,7 +14,7 @@ class IpLookUpRepository @Inject constructor(
         val response = try {
             apiInterface.getIpLookUpData(accessKey)
         } catch (e: Exception) {
-            return Resource.Error("An unknown error occured: ${e.localizedMessage}")
+            return Resource.Error("Network Error")
         }
         return Resource.Success(response)
     }

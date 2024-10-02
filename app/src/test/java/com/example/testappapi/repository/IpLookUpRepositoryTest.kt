@@ -1,0 +1,76 @@
+package com.example.testappapi.repository
+
+import com.example.testappapi.api.ApiInterface
+import com.example.testappapi.model.IpResponse
+import com.example.testappapi.model.Language
+import com.example.testappapi.model.Location
+import com.example.testappapi.util.Constants
+import com.example.testappapi.util.Resource
+import kotlinx.coroutines.test.runTest
+import org.junit.Assert.assertEquals
+import org.junit.Assert.assertTrue
+import org.junit.Before
+import org.junit.Test
+import org.mockito.Mock
+import org.mockito.MockitoAnnotations
+import org.mockito.kotlin.whenever
+
+class IpLookUpRepositoryTest {
+
+    @Mock
+    private lateinit var apiInterface: ApiInterface
+
+    private lateinit var repository: IpLookUpRepository
+
+    @Before
+    fun setUp() {
+        MockitoAnnotations.openMocks(this)
+        repository = IpLookUpRepository(apiInterface)
+    }
+
+    @Test
+    fun `getIpLookUpResponse return success when API is successful`() = runTest {
+        val accessKey = Constants.API_KEY
+        val ipResponse = IpResponse(
+            "134.201.250.155",
+            "ipv4",
+            "NA",
+            "North America",
+            "US",
+            "United States",
+            "NV",
+            "Nevada",
+            "Spring Valley",
+            "89144",
+            0.1,
+            0.2,
+            "29820",
+            "839",
+            "1",
+            "2",
+            "3",
+            Location(
+                "1",
+                "New york",
+                "USA",
+                "USA",
+                "1",
+                1,
+                true,
+                listOf(Language("1", "USA", "USA"))
+            )
+        )
+        whenever(apiInterface.getIpLookUpData(accessKey)).thenReturn(ipResponse)
+        val result = repository.getIpLookUpResponse(accessKey)
+        assertTrue(result is Resource.Success)
+        assertEquals(ipResponse, (result as Resource.Success).data)
+    }
+
+    @Test
+    fun `getIpLookUpResponse return error when API throws an exception`() = runTest {
+        val accessKey = Constants.INVALID_API_KEY
+        whenever(apiInterface.getIpLookUpData(accessKey)).thenThrow(RuntimeException("Network error"))
+        val result = repository.getIpLookUpResponse(accessKey)
+        assertTrue(result is Resource.Error)
+    }
+}

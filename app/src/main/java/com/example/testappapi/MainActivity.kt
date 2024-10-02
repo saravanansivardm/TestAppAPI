@@ -16,6 +16,7 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
@@ -80,7 +81,9 @@ fun CallApi(
                         CircularProgressIndicator()
                     }
                 } else if (viewModel.isLoading.value && status == ConnectivityObserver.Status.Available) {
-                    viewModel.fetchDataFromApi()
+                    LaunchedEffect(Unit) {
+                        viewModel.fetchDataFromApi()
+                    }
                     Column(
                         modifier = Modifier.background(Color.White),
                         horizontalAlignment = Alignment.CenterHorizontally
