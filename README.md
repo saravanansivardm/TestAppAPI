@@ -1,14 +1,18 @@
 # TestAppAPI
 
 **Android Architecture Components:**
-ViewModel
+
+* ViewModel
 
 **Dependency Injection:**
-Hilt
+
+* Hilt
 
 **Asynchronous Programming:**
-Suspend Function
 
+* Suspend Function
+
+**Project Description:**
 * With MVVM, I have integrated one API for this project.
 * Api response will be displayed based on network connection and implemented testcases also.
 * Created common textview in util ,that can be accessed in project
