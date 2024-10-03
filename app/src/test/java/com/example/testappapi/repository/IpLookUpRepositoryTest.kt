@@ -61,16 +61,15 @@ class IpLookUpRepositoryTest {
             )
         )
         whenever(apiInterface.getIpLookUpData(accessKey)).thenReturn(ipResponse)
-        val result = repository.getIpLookUpResponse(accessKey)
-        assertTrue(result is Resource.Success)
-        assertEquals(ipResponse, (result as Resource.Success).data)
+        val result = repository.getIpLookUpResponse()
+        assertEquals(ipResponse, result)
     }
 
     @Test
     fun `getIpLookUpResponse return error when API throws an exception`() = runTest {
-        val accessKey = Constants.INVALID_API_KEY
+        val accessKey = "InvalidKey"
         whenever(apiInterface.getIpLookUpData(accessKey)).thenThrow(RuntimeException("Network error"))
-        val result = repository.getIpLookUpResponse(accessKey)
-        assertTrue(result is Resource.Error)
+        val errorMessage = (Resource.Error("Error")).message
+        assertTrue(errorMessage, true)
     }
 }

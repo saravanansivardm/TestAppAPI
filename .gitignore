@@ -13,3 +13,19 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+.gradle/
+# Miscellaneous
+*.log
+*.hprof
+
+# External native build
+.cxx/
+.externalNativeBuild/
+cmake-build-*/
+gradle-wrapper.jar
+
+# Misc
+*.orig
+*.swp
+*.swo

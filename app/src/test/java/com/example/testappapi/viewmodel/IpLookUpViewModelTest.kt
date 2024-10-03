@@ -1,17 +1,13 @@
 package com.example.testappapi.viewmodel
 
-import androidx.lifecycle.Observer
 import com.example.testappapi.model.IpResponse
 import com.example.testappapi.model.Language
 import com.example.testappapi.model.Location
 import com.example.testappapi.repository.IpLookUpRepository
-import com.example.testappapi.util.Constants
-import com.example.testappapi.util.Resource
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -23,7 +19,6 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.kotlin.whenever
-import javax.inject.Inject
 
 @HiltAndroidTest
 @ExperimentalCoroutinesApi
@@ -32,17 +27,10 @@ class IpLookUpViewModelTest {
     @get:Rule
     var hiltRule = HiltAndroidRule(this)
 
-    @Inject
-    lateinit var apiRepository: IpLookUpRepository
-
     private lateinit var viewModel: IpLookUpViewModel
 
     @Mock
     private lateinit var ipLookUpRepository: IpLookUpRepository
-
-    @Mock
-    private lateinit var observer: Observer<IpResponse>
-    private val testDispatcher = UnconfinedTestDispatcher()
 
     @Before
     fun setUp() {
@@ -53,7 +41,7 @@ class IpLookUpViewModelTest {
     @After
     fun tearDown() {
         Dispatchers.resetMain()
-        viewModel.getIpData.removeObserver(observer) // Clean up observer
+        viewModel.getIpData.value
     }
 
     @Test
@@ -88,18 +76,17 @@ class IpLookUpViewModelTest {
             )
         )
 
-        Mockito.`when`(ipLookUpRepository.getIpLookUpResponse(Constants.API_KEY))
-            .thenReturn(Resource.Success(ipResponse))
+        Mockito.`when`(ipLookUpRepository.getIpLookUpResponse()).thenReturn(ipResponse)
         val sut = IpLookUpViewModel(ipLookUpRepository)
         sut.fetchDataFromApi()
         advanceUntilIdle()
         val result = sut.getIpData.value
-        assertEquals(viewModel.getIpData.value, result?.city)
+        assertEquals(viewModel.getIpData.value, result)
     }
 
     @Test
     fun `fetchDataFromApi error`() = runTest {
-        whenever(ipLookUpRepository.getIpLookUpResponse(Constants.API_KEY)).thenThrow(
+        whenever(ipLookUpRepository.getIpLookUpResponse()).thenThrow(
             RuntimeException("Network error")
         )
         viewModel.fetchDataFromApi()

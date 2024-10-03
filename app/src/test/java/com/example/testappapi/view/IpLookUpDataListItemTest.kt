@@ -11,7 +11,6 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.testappapi.model.IpResponse
 import com.example.testappapi.model.Language
 import com.example.testappapi.model.Location
-import com.example.testappapi.view.IpLookUpDataListItem
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
