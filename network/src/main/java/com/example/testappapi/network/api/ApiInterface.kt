@@ -1,6 +1,6 @@
-package com.example.testappapi.api
+package com.example.testappapi.network.api
 
-import com.example.testappapi.model.IpResponse
+import com.example.testappapi.network.model.IpResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 import javax.inject.Singleton

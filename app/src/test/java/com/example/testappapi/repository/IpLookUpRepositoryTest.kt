@@ -1,11 +1,12 @@
 package com.example.testappapi.repository
 
-import com.example.testappapi.api.ApiInterface
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.model.Language
-import com.example.testappapi.model.Location
-import com.example.testappapi.util.Constants
-import com.example.testappapi.util.Resource
+import com.example.testappapi.network.api.ApiInterface
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.model.Language
+import com.example.testappapi.network.model.Location
+import com.example.testappapi.network.repository.IpLookUpRepository
+import com.example.testappapi.network.util.Constants
+import com.example.testappapi.network.util.Resource
 import kotlinx.coroutines.test.runTest
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue

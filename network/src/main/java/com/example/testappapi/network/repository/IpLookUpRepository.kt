@@ -1,8 +1,8 @@
-package com.example.testappapi.repository
+package com.example.testappapi.network.repository
 
-import com.example.testappapi.api.ApiInterface
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.util.Constants
+import com.example.testappapi.network.api.ApiInterface
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.util.Constants
 import dagger.hilt.android.scopes.ActivityScoped
 import javax.inject.Inject
 

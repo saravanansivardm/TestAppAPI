@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TestAppAPI"
 include(":app")
+include(":network")

@@ -1,4 +1,4 @@
-package com.example.testappapi.util
+package com.example.testappapi.network.util
 
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
