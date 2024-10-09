@@ -1,4 +1,4 @@
-package com.example.testappapi.util
+package com.example.testappapi.network.util
 
 import kotlinx.coroutines.flow.Flow
 

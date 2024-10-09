@@ -8,9 +8,9 @@ import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.onRoot
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.model.Language
-import com.example.testappapi.model.Location
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.model.Language
+import com.example.testappapi.network.model.Location
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -48,7 +48,13 @@ class IpLookUpDataListItemTest {
                 countryFlagEmojiUnicode = "U+1F1FA U+1F1F8",
                 callingCode = "1",
                 isEu = false,
-                languages = listOf(Language(code = "1", name = "usa", native = "usa")),
+                languages = listOf(
+                    Language(
+                        code = "1",
+                        name = "usa",
+                        native = "usa"
+                    )
+                ),
                 countryFlag = "flag"
             )
         )

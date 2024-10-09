@@ -1,9 +1,9 @@
 package com.example.testappapi.viewmodel
 
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.model.Language
-import com.example.testappapi.model.Location
-import com.example.testappapi.repository.IpLookUpRepository
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.model.Language
+import com.example.testappapi.network.model.Location
+import com.example.testappapi.network.repository.IpLookUpRepository
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.Dispatchers

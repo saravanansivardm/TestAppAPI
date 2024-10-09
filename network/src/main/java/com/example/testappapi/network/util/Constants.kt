@@ -1,4 +1,4 @@
-package com.example.testappapi.util
+package com.example.testappapi.network.util
 
 object Constants {
     const val BASE_URL = "https://api.ipstack.com/"

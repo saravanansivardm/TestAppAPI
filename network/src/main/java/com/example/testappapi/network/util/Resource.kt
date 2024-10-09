@@ -1,4 +1,4 @@
-package com.example.testappapi.util
+package com.example.testappapi.network.util
 
 sealed class Resource<out T> {
     object Loading : Resource<Nothing>()

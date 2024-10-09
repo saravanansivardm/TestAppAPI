@@ -29,12 +29,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.util.ConnectivityObserver
-import com.example.testappapi.util.NetworkConnectivityObserver
-import com.example.testappapi.util.Resource
-import com.example.testappapi.util.SubTitleText
-import com.example.testappapi.util.TitleText
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.util.ConnectivityObserver
+import com.example.testappapi.network.util.NetworkConnectivityObserver
+import com.example.testappapi.network.util.Resource
+import com.example.testappapi.network.util.SubTitleText
+import com.example.testappapi.network.util.TitleText
 import com.example.testappapi.view.IpLookUpDataListItem
 import com.example.testappapi.viewmodel.IpLookUpViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -93,8 +93,8 @@ fun CallApi(
                             ) {
                                 TitleText(
                                     modifier = Modifier.padding(16.dp),
-                                    text = stringResource(id = R.string.title_txt),
                                     textAlign = TextAlign.Center,
+                                    text = stringResource(id = R.string.title_txt),
                                     color = Color.Black,
                                     fontWeight = FontWeight.Bold,
                                     fontSize = 28.sp,

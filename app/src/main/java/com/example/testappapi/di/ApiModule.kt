@@ -1,8 +1,8 @@
 package com.example.testappapi.di
 
-import com.example.testappapi.api.ApiInterface
-import com.example.testappapi.repository.IpLookUpRepository
-import com.example.testappapi.util.Constants
+import com.example.testappapi.network.api.ApiInterface
+import com.example.testappapi.network.repository.IpLookUpRepository
+import com.example.testappapi.network.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,7 +26,7 @@ class ApiModule {
     @Singleton
     @Provides
     fun providesIpLookUpApi(): ApiInterface {
-        var okHttpClient: OkHttpClient? = null
+        val okHttpClient: OkHttpClient?
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
 

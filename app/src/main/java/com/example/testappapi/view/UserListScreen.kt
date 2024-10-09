@@ -21,8 +21,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.testappapi.R
-import com.example.testappapi.model.IpResponse
-import com.example.testappapi.util.SubTitleText
+import com.example.testappapi.network.model.IpResponse
+import com.example.testappapi.network.util.SubTitleText
 
 @Composable
 fun IpLookUpDataListItem(ipResponse: IpResponse, bgColor: Color) {
